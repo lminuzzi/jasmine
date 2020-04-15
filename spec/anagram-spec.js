@@ -1,8 +1,5 @@
-var isAnagram = (str1, str2) => {
-    str1 = str1.toString().toLowerCase().split('').sort().join('');
-    str2 = str2.toString().toLowerCase().split('').sort().join('');
-    return str1 === str2;
-}
+var isAnagram = require('../anagram');
+
 describe('Anagram', function(){
   it('is true when "abc" and "cba"', function(){
     expect(isAnagram('abc', 'cba')).toEqual(true);

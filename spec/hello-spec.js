@@ -1,9 +1,3 @@
-/*
-function hello(){
-    return "Hello World!";
-}
-*/
-
 var hello = require('../hello');
 
 describe('Hello', () => {
