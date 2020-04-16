@@ -6,6 +6,10 @@ var toBeDefined = matcher.toBeDefined;
 var toBeUndefined = matcher.toBeUndefined;
 var toBeNan = matcher.toBeNan;
 
+beforeEach(function(){
+    jasmine.addMatchers(myMatchers);
+})
+
 describe('Matcher', () => {
     //toBE
     it('is true when object a and b have same property values', () => {
@@ -92,4 +96,26 @@ describe('Matcher', () => {
     it('is true if the function throw an error', () => {
         expect(errorReturn).toThrow();
     })
+
+    //MyMatcher toBe2
+    it('is 2', function(){
+        expect(2).toBe2();
+    })
 })
+
+var myMatchers = {
+    toBe2: function(util, customEqualityTesters) {
+        return {
+            compare: function(actual, expected) {
+                var result = {}
+                result.pass = actual === 2;
+
+                if(!result.pass) {
+                    result.message = "Expected " + actual + " to be exactly 2";
+                }
+
+                return result;
+            }
+        }
+    }
+}
