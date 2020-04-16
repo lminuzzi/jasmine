@@ -6,8 +6,14 @@ var toBeDefined = matcher.toBeDefined;
 var toBeUndefined = matcher.toBeUndefined;
 var toBeNan = matcher.toBeNan;
 
+var result = 2;
+
 beforeEach(function(){
     jasmine.addMatchers(myMatchers);
+})
+
+afterEach(function(){
+    result = 2;
 })
 
 describe('Matcher', () => {
@@ -100,6 +106,16 @@ describe('Matcher', () => {
     //MyMatcher toBe2
     it('is 2', function(){
         expect(2).toBe2();
+    })
+
+    //After each test
+    it('has to result in 5', function(){
+        result += 3;
+        expect(result).toEqual(5);
+    })
+    it('has to result in 9', function(){
+        result += 7;
+        expect(result).toEqual(9);
     })
 })
 
