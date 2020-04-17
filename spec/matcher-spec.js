@@ -21,7 +21,6 @@ describe('Matcher', () => {
     describe('toBe', () => {
         //toBE
         it('is true when object a and b have same property values', () => {
-            console.log(matcher)
             expect(toBe.a).toEqual(toBe.b);
         })
         it('is true when object a and b are the same object', () => {
