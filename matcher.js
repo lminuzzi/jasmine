@@ -17,3 +17,8 @@ module.exports.toBeNan = 0/0;
 module.exports.errorReturn = () => {
     throw new Error();
 };
+
+//return test
+module.exports.returnTest = () => {
+    return true;
+};

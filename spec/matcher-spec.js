@@ -5,6 +5,7 @@ var errorReturn = matcher.errorReturn;
 var toBeDefined = matcher.toBeDefined;
 var toBeUndefined = matcher.toBeUndefined;
 var toBeNan = matcher.toBeNan;
+var returnTest = matcher.returnTest;
 
 var result = 2;
 
@@ -163,6 +164,21 @@ describe('Matcher', () => {
         //Don't be executed
         it('is true if 3 is less than 7', () => {
             expect(3).toBeLessThan(7);
+        })
+    })
+
+    //Return test
+    describe('Return test', () => {
+        it('is true if the function return type is Boolean', () => {
+            expect(returnTest()).toEqual(jasmine.any(Boolean));
+        })
+
+        it('is true if Number have the type Object', () => {
+            expect(new Number).toEqual(jasmine.any(Object));
+        })
+
+        it('is true if Object not have the type Number', () => {
+            expect(new Object).not.toEqual(jasmine.any(Number));
         })
     })
 })
