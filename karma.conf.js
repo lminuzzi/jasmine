@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Apr 17 2020 21:15:48 GMT+0200 (Central European Summer Time)
+// Generated on Fri Apr 17 2020 22:46:09 GMT+0200 (Central European Summer Time)
 
 module.exports = function(config) {
   config.set({
@@ -27,6 +27,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'spec/*spec.js': [ 'webpack' ]
     },
 
 
